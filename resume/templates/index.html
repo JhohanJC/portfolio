@@ -8,5 +8,13 @@
 </head>
 <body>
     <h1>Resume</h1>
+    <div>
+        <h2>{{ date.name }}</h2>
+        <img src="{{ date.foto.url }}" width="100" height="100"><br>
+        <p>{{ date.profession }}</p>
+        <p>{{ date.about }}</p>
+        <a href="{{ date.file.url }}" download>CV</a>
+    </div>
+    <a href="{% url 'projects' %}">Projects</a>
 </body>
 </html>
