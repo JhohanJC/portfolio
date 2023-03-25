@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="description">
+    <div class="caja">
+        <h2>{{ projectd.title }}</h2>
+        <p class="texto">{{ projectd.description|safe }}</p>
+        <img src="{{ projectd.image.url }}" alt="project 2"><br>
+        <button class="btn rojo"><a href="{{ projectd.url }}" target="_blank">Project link</a></button>
+        <button class="btn verde"><a href="{% url 'projects' %}">Projects</a></button>
+        <button class="btn azul"><a href="{% url 'index' %}">Resume</a></button>
+    </div>
+</section>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,4 +31,4 @@
     <a href="{% url 'projects' %}">Projects</a><br>
     <a href="{% url 'index' %}">Resume</a>
 </body>
-</html>
+</html> -->

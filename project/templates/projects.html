@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Projects</h1>
+{% for pk in projects %}
+<section class="project">
+    <div class="project-dim">
+        <h3>{{ pk.title }}</h3>
+        <img src="{{ pk.image.url }}" alt="project 1"><br>
+        <button class="btn azul"><a href="{% url 'projectd' pk.id %}">READ MORE</a></button>
+    </div>
+</section>
+{% endfor %}
+{% endblock %}
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,14 +23,6 @@
 </head>
 <body>
     <h1>Projects</h1>
-    <!-- <div>
-        <h2>{{ projectd.title }}</h2>
-        <p> {{ projectd.description|safe }} </p>
-        <img src="{{ projectd.image.url }}" width="100" height="100" > <br>
-        <p> {{ projectd.url }}</p>
-        <a href="{{ projectd.url }}">Project link</a> <br>
-        <a href="{% url 'projectd' projectd.id %}">Leer más</a>
-    </div> -->
     {% for pk in projects %}
     <div>
         <h2>{{ pk.title }}</h2>
@@ -25,4 +32,4 @@
     {% endfor %}
     <a href="{% url 'index' %}">Resume</a>
 </body>
-</html>
+</html> -->

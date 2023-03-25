@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h5><a href="{% url 'index' %}">Resume</a></h5>
+        {% block name %} 
+        {% endblock %}
+    </header>
+    {% block content %}
+    {% endblock %}  
+    <!-- <section class="description">
+        <div class="caja">
+            <img src="{{ date.foto.url }}" class="img">
+            <h4>{{ date.profession }}</h4>
+            <p class="texto">{{ date.about }}</p>
+            <nav class="link">
+                <ul class="link-nav">
+                    <li class="link-nav__item"><a href="{{ date.file.url }}" download>Download CV</a></li>
+                    <li class="link-nav__item"><a href="{% url 'projects' %}">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section> -->
+</body>
+</html>

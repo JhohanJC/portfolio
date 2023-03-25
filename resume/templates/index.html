@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block name %} 
+<div class="header name">
+    <h3>{{ date.name }}</h3>
+</div>
+{% endblock %}
+{% block content %}
+<section class="description">
+    <div class="caja">
+        <img src="{{ date.foto.url }}" class="img">
+        <h4>{{ date.profession }}</h4>
+        <p class="texto">{{ date.about }}</p>
+        <nav class="link">
+            <ul class="link-nav">
+                <li class="link-nav__item"><a href="{{ date.file.url }}" download>Download CV</a></li>
+                <li class="link-nav__item"><a href="{% url 'projects' %}">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,4 +40,4 @@
     </div>
     <a href="{% url 'projects' %}">Projects</a>
 </body>
-</html>
+</html> -->
